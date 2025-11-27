@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Адмін Панель</title>
+</head>
+<body>
+
+    <header>
+        <h1>Адміністрування</h1>
+        <nav>
+            <a href="index.html">На головну</a>
+        </nav>
+    </header>
+    <hr>
+
+    <main>
+        <section>
+            <h3>Додати новий товар</h3>
+            <form action="#" method="POST">
+                <label for="name">Назва товару:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+
+                <label for="price">Ціна (грн):</label><br>
+                <input type="number" id="price" name="price"><br><br>
+
+                <label for="desc">Опис:</label><br>
+                <textarea id="desc" name="desc" rows="3"></textarea><br><br>
+
+                <button type="submit">Зберегти</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Список товарів (для редагування)</h3>
+            <ul>
+                <li>
+                    Фенікс - 32 999 грн 
+                    <button>Редагувати</button> <button>Видалити</button>
+                </li>
+                <li>
+                    ОфісPRO - 14 500 грн 
+                    <button>Редагувати</button> <button>Видалити</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <hr>
+        <p>&copy; 2025 T4P. Tech for Players.</p>
+    </footer>
+
+</body>
+</html>
