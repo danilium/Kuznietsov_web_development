@@ -1,0 +1,307 @@
+/* MODULE: LAYOUT
+   Відповідає за каркас (Structure), сітку (Grid) та адаптивність (Responsive).
+*/
+
+/* ----- Header (Загальний для всіх сторінок) ----- */
+header {
+    background-color: var(--color-dark);
+    color: #ffffff;
+    border-bottom: 2px solid var(--color-accent);
+    padding: 1rem 2rem;
+    
+    /* Flexbox: вирівнюємо логотип зліва, меню справа */
+    display: flex;
+    align-items: center;
+}
+
+header h1, header img {
+    color: #ffffff;
+    margin: 0;
+}
+
+/* ----- Hero Header (Ексклюзив для index.html) ----- */
+.hero-header {
+    background-color: #23272a !important; /* Темний фон */
+    color: #ffffff !important;
+    padding: 4rem 2rem;
+    
+    /* Flexbox: центруємо контент */
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    gap: 4rem;
+    text-align: left;
+    border-bottom: none;
+    width: 100%;
+}
+
+.hero-header h1 {
+    font-size: 5rem; /* Великий заголовок */
+    color: #ffffff !important;
+    margin: 0;
+    line-height: 1;
+}
+
+.hero-header p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    opacity: 0.8;
+}
+
+.hero-header img {
+    max-height: 400px; /* Оптимальний розмір ПК */
+    width: auto;
+    filter: drop-shadow(0 0 20px rgba(114, 137, 218, 0.6)); /* Неон-ефект */
+}
+
+/* ----- Навігація (В шапці) ----- */
+nav {
+    margin-left: auto; /* Push-техніка: штовхає меню в самий кінець праворуч */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Горизонтальне меню */
+    gap: 20px;
+}
+
+nav a {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+nav a:hover {
+    color: var(--color-accent);
+}
+
+/* ----- Main Nav (Меню по центру на index.html) ----- */
+.main-nav {
+    background: transparent;
+    padding: 2rem 0;
+    width: 100%;
+    margin: 0; /* Скидаємо margin-left: auto */
+    
+    display: flex;
+    justify-content: center; /* Центруємо блок */
+}
+
+.main-nav ul {
+    justify-content: center; /* Центруємо список */
+    gap: 40px;
+}
+
+.main-nav a {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-text) !important; /* Темний текст на білому фоні */
+    position: relative;
+}
+
+/* Ефект підкреслення при наведенні */
+.main-nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: var(--color-accent);
+    transition: width 0.3s;
+    margin-top: 5px;
+}
+.main-nav a:hover::after { width: 100%; }
+
+/* ----- Контентна частина ----- */
+main {
+    flex: 1; /* Займає весь вільний простір (притискає футер) */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ----- Сітка товарів (CSS Grid) ----- */
+.product-grid {
+    display: grid;
+    /* Адаптивна сітка: колонки мінімум 280px, далі розтягуються */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+/* ----- Footer ----- */
+footer {
+    background-color: var(--color-dark);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* ----- Layout сторінки Контактів (Flexbox) ----- */
+.contacts-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 2rem;
+}
+.contacts-info { flex: 1; }
+.contact-form { flex: 1; }
+
+/* ----- Layout сторінки Каталогу (Sidebar + Grid) ----- */
+.catalog-container {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* 300px Фільтр | Решта - Товари */
+    gap: 40px;
+    align-items: start;
+}
+
+/* Стиль сайдбару (Фільтри) */
+.filter-sidebar {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 8px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.filter-group h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+/* Фіксуємо розмір чекбокса, щоб його не розтягувало */
+.filter-group input[type="checkbox"] {
+    width: 20px !important;
+    height: 20px;
+    margin: 0;
+    flex-shrink: 0; /* Забороняємо стискатись */
+}
+
+/* ----- АДАПТИВНІСТЬ (Mobile) ----- */
+@media (max-width: 768px) {
+    /* Загальні налаштування Хедера */
+    header, .hero-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    header nav {
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Головна сторінка - стовпчик */
+    .main-nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border: none !important;
+        background: none !important;
+        font-size: 1.1rem;
+    }
+
+    /* Інші сторінки - рядок */
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+        border: none;
+        background: none;
+    }
+
+    header nav li { width: auto; border: none; }
+
+    header nav a {
+        display: inline-block;
+        width: auto;
+        padding: 5px;
+        border: none !important;
+        background: none !important;
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    /* КОНТАКТИ (Центрування форми) */
+    .contacts-container {
+        flex-direction: column; /* Блоки один під одним */
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* Робимо форму та інфо-блок не ширшими за екран */
+    .contacts-info, .contact-form {
+        width: 100%;       /* Розтягуємо на доступну ширину */
+        max-width: 400px;  /* Але не більше 400px, щоб виглядало гарно */
+        text-align: center; /* Текст всередині теж по центру */
+    }
+
+    /* Форму вирівнюємо зліва (самі поля), але контейнер по центру */
+    .contact-form form {
+        text-align: left; 
+    }
+
+    /* КОШИК (Виправлення Таблиці) */
+    table {
+        display: block;       /* Робимо блоком, щоб працювала прокрутка */
+        width: 100%;          /* Ширина на весь екран */
+        overflow-x: auto;     /* Вмикаємо горизонтальний скрол */
+        white-space: nowrap;  /* Забороняємо перенос тексту, щоб рядки були рівними */
+        border: 1px solid #eee; /* Рамка навколо всієї таблиці */
+    }
+
+    /* Зменшуємо відступи та шрифт в таблиці, щоб більше влізло */
+    th, td {
+        padding: 8px 5px; /* Менші відступи */
+        font-size: 0.85rem; /* Менший шрифт */
+    }
+
+    /* Кнопки в таблиці теж зменшуємо */
+    td button {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+    
+    /* Інші елементи */
+    .catalog-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-header img { 
+        max-height: 200px;
+        margin-bottom: 1rem;
+    }
+    .hero-header h1 { font-size: 3rem; }
+}
