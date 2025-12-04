@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог ПК - T4P</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>T4P - Каталог</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+                <li><a href="cart.html">Кошик</a></li>
+                <li><a href="login.html">Вхід</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Вибір комп'ютера</h2>
+
+        <div class="catalog-container">
+
+            <aside class="filter-sidebar">
+                <h3>Фільтри</h3>
+                <form action="#">
+                    <div class="filter-group">
+                        <h4>Ціна (грн)</h4>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="number" placeholder="Від" style="margin: 0;">
+                            <input type="number" placeholder="До" style="margin: 0;">
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Призначення</h4>
+                        <label><input type="checkbox"> Ігрові ПК</label>
+                        <label><input type="checkbox"> Для навчання</label>
+                        <label><input type="checkbox"> Робочі станції</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Відеокарта</h4>
+                        <label><input type="checkbox"> NVIDIA GeForce</label>
+                        <label><input type="checkbox"> AMD Radeon</label>
+                    </div>
+
+                    <button type="button" style="width: 100%;">Застосувати</button>
+                </form>
+            </aside>
+
+            <section>
+                <div class="product-grid">
+                    <article>
+                        <h3>Фенікс (Phoenix)</h3>
+                        <p><em>Потужний ігровий монстр.</em></p>
+                        <ul>
+                            <li><strong>CPU:</strong> i5-12400F</li>
+                            <li><strong>GPU:</strong> RTX 3060</li>
+                        </ul>
+                        <p><strong>32 999 грн</strong></p>
+                        <div class="card-buttons">
+                            <button>Детальніше</button><button>В кошик</button>
+                        </div>
+                    </article>
+
+                    <article>
+                        <h3>ОфісPRO</h3>
+                        <p><em>Надійне рішення.</em></p>
+                        <ul>
+                            <li><strong>CPU:</strong> i3-12100</li>
+                            <li><strong>GPU:</strong> Intel UHD</li>
+                        </ul>
+                        <p><strong>14 500 грн</strong></p>
+                        <div class="card-buttons">
+                            <button>Детальніше</button><button>В кошик</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 T4P. Tech for Players.</p>
+    </footer>
+</body>
+
+</html>

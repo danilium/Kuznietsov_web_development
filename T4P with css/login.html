@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Вхід - T4P</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Особистий кабінет</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+                <li><a href="cart.html">Кошик</a></li>
+                <li><a href="login.html">Вхід</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section style="text-align: center;">
+            <h2>Створити акаунт</h2>
+            <p>Приєднуйтесь до T4P, щоб купувати техніку зручно.</p>
+
+            <form action="#" method="POST">
+                <label>Email:</label>
+                <input type="email" name="email" required placeholder="example@mail.com">
+
+                <label>Логін:</label>
+                <input type="text" name="new_login" required placeholder="User123">
+
+                <label>Пароль:</label>
+                <input type="password" name="new_password" required placeholder="********">
+
+                <button type="submit" style="width: 100%; margin-top: 10px;">Зареєструватися</button>
+
+                <p style="margin-top: 20px;">
+                    Вже є акаунт?
+                    <a href="#login-modal" style="font-weight: bold;">Увійти тут</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+
+            <h2 style="text-align: center;">Вхід в систему</h2>
+            <form action="#" method="POST" style="box-shadow: none; border: none; padding: 0;">
+                <label>Логін:</label>
+                <input type="text" name="login" placeholder="Ваш логін">
+
+                <label>Пароль:</label>
+                <input type="password" name="password" placeholder="Ваш пароль">
+
+                <button type="submit" style="width: 100%;">Увійти</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <hr>
+        <p>&copy; 2025 T4P. Tech for Players.</p>
+    </footer>
+
+</body>
+
+</html>
