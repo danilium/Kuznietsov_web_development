@@ -1,0 +1,58 @@
+/* MODULE: BASE
+   Базові налаштування. Тут визначено "Брендбук" у вигляді змінних.
+*/
+
+/* Підключення шрифту Open Sans (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* ----- CSS Variables (Змінні) ----- */
+:root {
+    /* Кольорова гама з ЛР1 */
+    --color-accent: #7289da;      /* Акцент (синьо-фіолетовий) */
+    --color-bg: #ffffff;          /* Фон сторінки */
+    --color-secondary: #99aab5;   /* Світло-сірий (рамки, неактивні елементи) */
+    --color-text: #2c2f33;        /* Основний текст */
+    --color-dark: #23272a;        /* Темний фон (Header, Footer) */
+    --color-error: #e74c3c;       /* Колір помилки (для валідації) */
+    
+    --font-main: 'Open Sans', 'Futura', sans-serif;
+}
+
+/* ----- Global Reset & Setup ----- */
+* {
+    box-sizing: border-box; /* Padding не збільшує ширину елемента */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    
+    /* Flexbox: притискаємо футер до низу екрана */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-accent);
+    transition: color 0.3s ease; /* Плавна зміна кольору */
+}
+
+a:hover {
+    color: var(--color-dark);
+}
+
+img {
+    max-width: 100%; /* Зображення адаптивні за замовчуванням */
+    height: auto;
+}
